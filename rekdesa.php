@@ -67,19 +67,19 @@
     $result = $mysqli->query($query);
     $row = $result->fetch_row();
     $jumlahsumber = $row[0];
-    echo "<h1>Jumlah sumber: $jumlahsumber </h1>";
+    echo "<h1>Jumlah sumber air minum: $jumlahsumber </h1>";
 
-    echo "<h1><br>Tes data untuk dimasukkan ke matriks:</h1>";
+    // echo "<h1><br>Tes data untuk dimasukkan ke matriks:</h1>";
     $query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
     $result = $mysqli->query($query);
     $matriks = array(array());
-    echo "<h1>Matriks mula-mula:</h1>";
+    // echo "<h1>Matriks mula-mula:</h1>";
     for ($i = 0; $i < $jumlahdesa; $i++) {
         for ($j = 0; $j < $jumlahsumber; $j++) {
             $matriks[$i][$j] = 0.0;
-            echo $matriks[$i][$j];
+            // echo $matriks[$i][$j];
         }
-        echo "<br>";
+        // echo "<br>";
     }
 
     $count = 0;
@@ -93,7 +93,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Air isi ulang") {
             $value = 1;
             $jumlah = $row[2];
@@ -101,7 +100,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Air kemasan bermerek") {
             $value = 2;
             $jumlah = $row[2];
@@ -109,7 +107,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Air sungan/danau/waduk") {
             $value = 3;
             $jumlah = $row[2];
@@ -117,7 +114,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Lainnya") {
             $value = 4;
             $jumlah = $row[2];
@@ -125,7 +121,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Leding eceran") {
             $value = 5;
             $jumlah = $row[2];
@@ -133,7 +128,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Leding meteran") {
             $value = 6;
             $jumlah = $row[2];
@@ -141,7 +135,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Mata air tak terlindung") {
             $value = 7;
             $jumlah = $row[2];
@@ -149,7 +142,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Mata air terlindung") {
             $value = 8;
             $jumlah = $row[2];
@@ -157,7 +149,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Sumur bor/pompa") {
             $value = 9;
             $jumlah = $row[2];
@@ -165,7 +156,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Sumur tak terlindung") {
             $value = 10;
             $jumlah = $row[2];
@@ -173,7 +163,6 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         } elseif ($row[1] == "Sumur terlindung") {
             $value = 11;
             $jumlah = $row[2];
@@ -181,24 +170,23 @@
                 $count = $count + 1;
             }
             $matriks[$count][$value] = $jumlah;
-            echo "<h1>$count $value $jumlah</h1>";
         }
         $tampungvalue = $value;
     }
-    echo "<h1>Matriks baru:</h1>";
-    for ($i = 0; $i < $jumlahdesa; $i++) {
-        for ($j = 0; $j < $jumlahsumber; $j++) {
-            echo $matriks[$i][$j] . "&emsp;&emsp;";
-        }
-        echo "<br>";
-    }
 
-    echo "<h1><br>Kumpulan data yang dianalisis:</h1>";
-    $query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
-    $result = $mysqli->query($query);
-    while ($row = $result->fetch_row()) {
-        echo "<h1>$row[0] $row[1] $row[2]<br></h1>";
-    }
+    // echo "<h1>Matriks baru:</h1>";
+    // for ($i = 0; $i < $jumlahdesa; $i++) {
+    //     for ($j = 0; $j < $jumlahsumber; $j++) {
+    //     }
+    //     echo "<br>";
+    // }
+
+    // echo "<h1><br>Kumpulan data yang dianalisis:</h1>";
+    // $query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
+    // $result = $mysqli->query($query);
+    // while ($row = $result->fetch_row()) {
+    //     echo "<h1>$row[0] $row[1] $row[2]<br></h1>";
+    // }
 
     // Mencari nilai pembagi
     $pembagi = array();
@@ -208,9 +196,9 @@
             $temp = $temp + $matriks[$j][$i];
         }
         $pembagi[$i] = sqrt($temp);
-        echo $pembagi[$i] . "<br>";
+        // echo $pembagi[$i] . "<br>";
     }
-    echo "<br>";
+    // echo "<br>";
 
     // Mencari keputusan ternormalisasi
     $ternormalisasi = array(array());
@@ -254,7 +242,7 @@
                 $aplus[$i] = $terbobot[$j][$i];
             }
         }
-        echo $aplus[$i] . "<br>";
+        // echo $aplus[$i] . "<br>";
     }
 
     $aminus = array();
@@ -262,14 +250,14 @@
         $aminus[$i] = 0;
     }
     // MIN
-    echo "<br>";
+    // echo "<br>";
     for ($i = 0; $i < $jumlahsumber; $i++) {
         for ($j = 0; $j < $jumlahdesa; $j++) {
             if ($terbobot[$j][$i] < $aplus[$i]) {
                 $aminus[$i] = $terbobot[$j][$i];
             }
         }
-        echo $aminus[$i] . "<br>";
+        // echo $aminus[$i] . "<br>";
     }
 
     // Nilai separation measure D+ dan D-
@@ -291,11 +279,11 @@
 
     // Hasil perhitungan kedekatan nilai preferensi
     $V = array(array());
-    echo "<br>";
+    // echo "<br>";
     for ($i = 0; $i < $jumlahdesa; $i++) {
         $temp = $dplus[$i] + $dminus[$i];
         $V[$i][1] = $dminus[$i] / $temp;
-        echo $V[$i][1] . "<br>";
+        // echo $V[$i][1] . "<br>";
     }
     $query = "SELECT desa FROM airminum GROUP BY desa ORDER BY desa;";
     $result = $mysqli->query($query);
@@ -305,17 +293,23 @@
         $count = $count + 1;
     }
 
+    // Hasil akhir
     rsort($V);
-    echo "<br>";
+
+    echo "<h1>Hasil analisis:<br>Semakin besar V, maka semakin tinggi rankingnya. Oleh karena itu, " . $V[0][0] . " terpilih sebagai desa yang paling diutamakan dengan nilai tertinggi sebesar ". $V[0][1] . ".</h1>";
+
+    echo "<h1>Hasil perankingan:<br>";
     for ($i = 0; $i < $jumlahdesa; $i++) {
         for ($j = 0; $j < 2; $j++) {
-            echo $V[$i][$j] . " ";
+            if($j == 0){
+                echo $V[$i][$j] . " - ";
+            } else{
+                echo $V[$i][$j];
+            }
         }
         echo "<br>";
     }
-
-    // Hasil akhir
-    echo "<h1>Hasil Analisis:<br>Semakin besar V, maka semakin tinggi rankingnya. Oleh karena itu, " . $V[0][0] . " terpilih sebagai desa yang paling diutamakan dengan nilai tertinggi sebesar ". $V[0][1] . ".</h1>";
+    echo "</h1>";
     ?>
 </body>
 
