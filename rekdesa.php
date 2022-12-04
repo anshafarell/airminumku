@@ -61,6 +61,17 @@ echo "<h1>Jumlah sumber: $jumlahsumber </h1>";
 echo "<h1><br>Tes data untuk dimasukkan ke matriks:</h1>";
 $query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
 $result = $mysqli->query($query);
+$matriks = array(array());
+echo "<h1>Matriks mula-mula:</h1>";
+for($i = 0; $i < $jumlahdesa; $i++){
+    for($j = 0; $j < $jumlahsumber; $j++){
+        $matriks[$i][$j] = 0;
+        echo $matriks[$i][$j];
+    }
+    echo "<br>";
+}
+echo "<br>";
+$count = 0;
 while ($row = $result->fetch_row()) {
     if ($row[1] == "Air isi ulang") {
         $value = 0;
