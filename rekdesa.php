@@ -70,7 +70,47 @@ while ($row = $result->fetch_row()) {
         $value = 1;
         $jumlah = $row[2];
         echo "<h1>$value $jumlah</h1>";
-    }
+    } elseif($row[1] == "Mata air tak terlindung") {
+        $value = 2;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Mata air terlindung") {
+        $value = 3;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Sumur tak terlindung") {
+        $value = 4;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Sumur terlindung") {
+        $value = 5;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Air kemasan bermerek") {
+        $value = 6;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Air sungan/danau/waduk") {
+        $value = 7;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Lainnya") {
+        $value = 8;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Leding eceran") {
+        $value = 9;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Sumur bor/pompa") {
+        $value = 10;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Air hujan") {
+        $value = 11;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } 
 }
 
 echo "<h1><br>Kumpulan data yang dianalisis:</h1>";
