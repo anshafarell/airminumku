@@ -70,13 +70,13 @@ for($i = 0; $i < $jumlahdesa; $i++){
     }
     echo "<br>";
 }
-echo "<br>";
 $count = 0;
 while ($row = $result->fetch_row()) {
     if ($row[1] == "Air isi ulang") {
         $value = 0;
         $jumlah = $row[2];
         echo "<h1>$value $jumlah</h1>";
+        $matriks[$count][$value] = $matriks[$count][$value] + $row[2];
     } elseif($row[1] == "Leding meteran") {
         $value = 1;
         $jumlah = $row[2];
@@ -122,6 +122,13 @@ while ($row = $result->fetch_row()) {
         $jumlah = $row[2];
         echo "<h1>$value $jumlah</h1>";
     } 
+}
+echo "<h1>Matriks baru:</h1>";
+for($i = 0; $i < $jumlahdesa; $i++){
+    for($j = 0; $j < $jumlahsumber; $j++){
+        echo $matriks[$i][$j] . "&emsp;&emsp;";
+    }
+    echo "<br>";
 }
 
 echo "<h1><br>Kumpulan data yang dianalisis:</h1>";
