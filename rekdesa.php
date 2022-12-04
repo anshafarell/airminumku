@@ -58,6 +58,21 @@ $row = $result->fetch_row();
 $jumlahsumber = $row[0];
 echo "<h1>Jumlah sumber: $jumlahsumber </h1>";
 
+echo "<h1><br>Tes data untuk dimasukkan ke matriks:</h1>";
+$query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
+$result = $mysqli->query($query);
+while ($row = $result->fetch_row()) {
+    if ($row[1] == "Air isi ulang") {
+        $value = 0;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    } elseif($row[1] == "Leding meteran") {
+        $value = 1;
+        $jumlah = $row[2];
+        echo "<h1>$value $jumlah</h1>";
+    }
+}
+
 echo "<h1><br>Kumpulan data yang dianalisis:</h1>";
 $query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
 $result = $mysqli->query($query);
