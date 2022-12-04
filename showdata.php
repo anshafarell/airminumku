@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="icon" type="image/x-icon" href="assets/img/AirMinumku.png" />
-<title>Data Sumber Air Minum di Kabupaten Sumedang</title>
+<title>Tabel Seluruh Data</title>
 <style>
 h1, table {
 border-collapse: collapse;
