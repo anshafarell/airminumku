@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/x-icon" href="assets/img/AirMinumku.png" />
 <title>Data Sumber Air Minum di Kabupaten Sumedang</title>
 <style>
 h1, table {
@@ -58,7 +59,7 @@ while($row = $result->fetch_assoc()) {
 echo "<tr><td>" . $row["kecamatan"]. "</td><td>" . $row["desa"] . "</td><td>" . $row["sumber"]. "</td><td>" . $row["jumlah"]. "</td><td>" . $row["satuan"]. "</td><td>" . $row["tahun"]. "</td></tr>";
 }
 echo "</table>";
-} else { echo "0 results"; }
+} else { echo "<h1>Tabel kosong!</h1>"; }
 $conn->close();
 ?>
 </table>

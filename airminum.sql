@@ -1,3 +1,5 @@
+DROP TABLE airminum;
+
 CREATE TABLE airminum 
 (
     kecamatan	varchar(30),
