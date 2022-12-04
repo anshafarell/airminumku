@@ -51,7 +51,7 @@ $conn = mysqli_connect("localhost:8111", "root", "1234", "airminumku");
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM airminum";
+$sql = "SELECT * FROM airminum ORDER BY kecamatan, desa, sumber";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 // output data of each row
