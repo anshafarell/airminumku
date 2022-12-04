@@ -49,12 +49,18 @@ echo "<h1>Jumlah desa: $jumlahdesa </h1>";
 $query = "SELECT count(kecamatan) OVER() FROM airminum GROUP BY kecamatan;";
 $result = $mysqli->query($query);
 $row = $result->fetch_row();
-$jumlahdesa = $row[0];
-echo "<h1>Jumlah kecamatan: $jumlahdesa </h1>";
+$jumlahkecamatan = $row[0];
+echo "<h1>Jumlah kecamatan: $jumlahkecamatan </h1>";
 
+$query = "SELECT count(sumber) OVER() FROM airminum GROUP BY sumber;";
+$result = $mysqli->query($query);
+$row = $result->fetch_row();
+$jumlahsumber = $row[0];
+echo "<h1>Jumlah sumber: $jumlahsumber </h1>";
+
+echo "<h1><br>Kumpulan data yang dianalisis:</h1>";
 $query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
 $result = $mysqli->query($query);
-
 while ($row = $result->fetch_row()) {
     echo "<h1>$row[0] $row[1] $row[2]<br></h1>";
 }
