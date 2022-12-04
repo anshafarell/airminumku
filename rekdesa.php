@@ -182,6 +182,20 @@ for($i = 0; $i < $jumlahdesa; $i++){
     echo "<br>";
 }
 
+// Mencari nilai pembagi
+
+// Mencari keputusan ternormalisasi
+
+// Tabel keputusan ternormalisasi dan terbobot
+
+// Hasil perhitungan solusi ideal positif dan solusi ideal negatif
+
+// Nilai separation measure D+ dan D-
+
+// Hasil perhitungan kedekatan nilai preferensi
+
+// Hasil akhir
+
 echo "<h1><br>Kumpulan data yang dianalisis:</h1>";
 $query = "SELECT desa, sumber, jumlah FROM airminum ORDER BY desa, sumber;";
 $result = $mysqli->query($query);
