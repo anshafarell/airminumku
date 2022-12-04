@@ -70,58 +70,109 @@ for($i = 0; $i < $jumlahdesa; $i++){
     }
     echo "<br>";
 }
+
 $count = 0;
+$value = $jumlahdesa + 1;
+$tampungvalue = -1;
 while ($row = $result->fetch_row()) {
-    if ($row[1] == "Air isi ulang") {
+    if ($row[1] == "Air hujan") {
         $value = 0;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-        $matriks[$count][$value] = $matriks[$count][$value] + $row[2];
-    } elseif($row[1] == "Leding meteran") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Air isi ulang") {
         $value = 1;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Mata air tak terlindung") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Air kemasan bermerek") {
         $value = 2;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Mata air terlindung") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Air sungan/danau/waduk") {
         $value = 3;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Sumur tak terlindung") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Lainnya") {
         $value = 4;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Sumur terlindung") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Leding eceran") {
         $value = 5;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Air kemasan bermerek") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Leding meteran") {
         $value = 6;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Air sungan/danau/waduk") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Mata air tak terlindung") {
         $value = 7;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Lainnya") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Mata air terlindung") {
         $value = 8;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Leding eceran") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Sumur bor/pompa") {
         $value = 9;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Sumur bor/pompa") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Sumur tak terlindung") {
         $value = 10;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } elseif($row[1] == "Air hujan") {
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    } elseif($row[1] == "Sumur terlindung") {
         $value = 11;
         $jumlah = $row[2];
-        echo "<h1>$value $jumlah</h1>";
-    } 
+        if($value - $tampungvalue <= 0){
+            $count = $count + 1;
+        }
+        $matriks[$count][$value] = $jumlah;
+        echo "<h1>$count $value $jumlah</h1>";
+    }
+    $tampungvalue = $value; 
 }
 echo "<h1>Matriks baru:</h1>";
 for($i = 0; $i < $jumlahdesa; $i++){
