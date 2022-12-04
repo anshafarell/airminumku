@@ -15,12 +15,26 @@ th {
 background-color: #588c7e;
 color: white;
 }
+.button {
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+.button1 {background-color: #588c7e;} /* Green */
 tr:nth-child(even) {background-color: #f2f2f2}
 </style>
 </head>
 
 <body>
 <h1>Tabel Seluruh Data</h1>
+<button class="button button1" onclick="location.href = 'index.html';">Kembali ke Halaman Utama</button>
+<br>
 <table>
 <tr>
 <th>Kecamatan</th>
