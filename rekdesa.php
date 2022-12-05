@@ -298,16 +298,12 @@
 
     echo "<h1>Hasil analisis:<br>Semakin besar V, maka semakin tinggi rankingnya. Oleh karena itu, " . $V[0][0] . " terpilih sebagai desa yang paling diutamakan dengan nilai tertinggi sebesar ". $V[0][1] . ".</h1>";
 
-    echo "<h1>Hasil perankingan:<br>";
+    echo "<h1>Hasil perankingan (Desa - V - Rank):<br>";
     for ($i = 0; $i < $jumlahdesa; $i++) {
         for ($j = 0; $j < 2; $j++) {
-            if($j == 0){
-                echo $V[$i][$j] . " - ";
-            } else{
-                echo $V[$i][$j];
-            }
+            echo $V[$i][$j] . " - ";
         }
-        echo "<br>";
+        echo $i+1 . "<br>";
     }
     echo "</h1>";
     ?>
